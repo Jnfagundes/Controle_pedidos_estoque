@@ -14,6 +14,7 @@ document.getElementById('btnEntrar').addEventListener('click', function() {
         document.getElementById('bemVindoUsuario').textContent = `Bem-vindo, ${usuario}!`;
         document.getElementById('secaoBoasVindas').style.display = 'block';
         document.getElementById('cadastrarProduto').style.display = 'block';
+        document.getElementById('btnSolicitacao').style.display = 'block';
     } else {
         alert('Usuário ou senha incorretos.');
     }
@@ -25,4 +26,8 @@ document.getElementById('mostrarTabela').addEventListener('click' , function(){
 
 document.getElementById('ocultarTabela').addEventListener('click' , function(){
     document.getElementById('produtosCadastrados').style.display = 'none';
+});
+
+document.getElementById('btnSolicitacao').addEventListener('click' , function(){
+    document.getElementById('solicitacao').style.display = 'block';
 });
