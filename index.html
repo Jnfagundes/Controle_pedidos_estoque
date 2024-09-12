@@ -41,13 +41,34 @@
             <label for="entradaData">Data da chegada:</label>
             <input type="date" id="entradaData" required>
 
-            <button type="submit">Salvar Produto</button>
+            <button type="submit" id="btnSalvarProduto">Salvar Produto</button>
         </form>
+        <button id="mostrarTabela">Mostrar produtos cadastrados</button>
 
-
+        <!-- Tabela para exibir os produtos cadastrados -->
+         <div id="produtosCadastrados" style="display: none;">
+            <h3>Produtos cadastrados</h3>
+            
+            <table border="1" id="tabelaProdutos" >
+                <thead>
+                    <tr>
+                        <th>Nome do Produto</th>
+                        <th>Quantidade</th>
+                        <th>Data de Validade</th>
+                        <th>Data de entrada</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <!-- Os produtos cadastrados serão adicionados aqui -->
+                </tbody>
+            </table>
+            <button id="ocultarTabela">Ocultar produtos cadastrados</button>
+        </div>
+        
     </section>
 
-
+    
     <script src="script/login.js"></script>
+    <script src="script/produtos.js"></script>
 </body>
 </html>

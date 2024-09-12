@@ -18,3 +18,11 @@ document.getElementById('btnEntrar').addEventListener('click', function() {
         alert('Usuário ou senha incorretos.');
     }
 });
+
+document.getElementById('mostrarTabela').addEventListener('click' , function(){
+    document.getElementById('produtosCadastrados').style.display = 'block';
+});
+
+document.getElementById('ocultarTabela').addEventListener('click' , function(){
+    document.getElementById('produtosCadastrados').style.display = 'none';
+});
