@@ -4,8 +4,8 @@ document.addEventListener('DOMContentLoaded', function() {
 
     // Carrega os produtos salvos do localStorage ao carregar a página
     function carregarSolicitacoes() {
-        const solicitacao = JSON.parse(localStorage.getItem('produtos')) || [];
-        solicitacao.forEach(solicitacao => adicionarProdutoNaTabela(produto));
+        const solicitacao = JSON.parse(localStorage.getItem('solicitacao')) || [];
+        solicitacao.forEach(solicitacao => adicionarProdutoNaTabela(solicitacao));
     }
 
     // Adiciona solicitações na tabela

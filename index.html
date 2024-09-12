@@ -10,7 +10,7 @@
 <body>
     <header>
         <img src="img/logo dos SDP minusculo.png" alt="">
-        <h1>Controle de pedidos dos itens em estoque Unidade Dom João</h1>
+        <h1>Controle de pedidos de itens em estoque da Unidade Dom João</h1>
     </header>
     <hr>
     <section id="secaoLogin">
@@ -66,7 +66,7 @@
         </div>
         
     </section>
-    <button id="btnSolicitacao" style="display: none;">Solicitações</button>
+    <button id="btnSolicitacao" style="display: none;">Criar uma nova solicitação</button>
     <section id="solicitacao" style="display: none;">
         <form action="formSolicitacao">
             <h2 class="titulo">Solicitações</h2>
@@ -84,6 +84,8 @@
 
             <label for="statusSolicitacao" style="margin-left: 18px;">Status da solicitação: </label>
             <input type="text" id="statusSolicitacao">
+
+            <button type="submit" id="btnSolicitacaoEnviar">Salvar solicitação</button>
         </form>
         <!--Tabela para exibir as solicitações-->
         <div id="produtoSolicitado">
