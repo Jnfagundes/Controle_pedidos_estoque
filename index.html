@@ -8,11 +8,14 @@
     <link rel="stylesheet" href="css/label.css">
 </head>
 <body>
+    <!--Criação do cabeçalho-->
     <header>
         <img src="img/logo dos SDP minusculo.png" alt="">
         <h1>Controle de pedidos de itens em estoque da Unidade Dom João</h1>
     </header>
     <hr>
+    <!--Seção do login.
+    Ficará visível somente durante o login -->
     <section id="secaoLogin">
         <label for="loginUsuario">Digite seu usuário: </label>
         <input type="text" id="loginUsuario">
@@ -22,13 +25,16 @@
 
         <button id="btnEntrar">Entrar</button>
     </section>
+    <!--Seção de boas vindas. Ficará sempre visível após o login-->
     <section id="secaoBoasVindas" style="display:none;">
         <h2 id="bemVindoUsuario"></h2>
 
     </section>
+
+    <!--Seção de cadastramento de produtos-->
     <section id="cadastrarProduto" style="display: none;">
         <h2 class="titulo">Cadastrar produto</h2>
-        <form id="formProduto">
+        <form id="formProduto"> <!--Formulário para cadastrar produtos-->
             <label for="nomeProduto">Nome do Produto:</label>
             <input type="text" id="nomeProduto" required>
 
@@ -41,8 +47,11 @@
             <label for="entradaData">Data da chegada:</label>
             <input type="date" id="entradaData" required>
 
+            <!--Botão para enviar o cadastro-->
             <button type="submit" id="btnSalvarProduto">Salvar Produto</button>
         </form>
+
+        <!--Botão para mostrar a tabela de cadastro-->
         <button id="mostrarTabela">Mostrar produtos cadastrados</button>
 
         <!-- Tabela para exibir os produtos cadastrados -->
@@ -62,13 +71,19 @@
                     <!-- Os produtos cadastrados serão adicionados aqui -->
                 </tbody>
             </table>
+
+            <!--Botão para ocultar tabela-->
             <button id="ocultarTabela">Ocultar produtos cadastrados</button>
         </div>
         
     </section>
+
+    <!--Botão para mostrar os campos para cadastramento de solicitações-->
     <button id="btnSolicitacao" style="display: none;">Criar uma nova solicitação</button>
+
+    <!--Seção de solicitações-->
     <section id="solicitacao" style="display: none;">
-        <form action="formSolicitacao">
+        <form action="formSolicitacao"> <!--Formulário para criar as solicitações-->
             <h2 class="titulo">Solicitações</h2>
             <label for="solicitante">Nome do solicitante: </label>
             <input type="text" id="solicitacao">
@@ -85,6 +100,7 @@
             <label for="statusSolicitacao" style="margin-left: 18px;">Status da solicitação: </label>
             <input type="text" id="statusSolicitacao">
 
+            <!--botão para enviar as solicitações-->
             <button type="submit" id="btnSolicitacaoEnviar">Salvar solicitação</button>
         </form>
         <!--Tabela para exibir as solicitações-->
