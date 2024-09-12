@@ -1,6 +1,6 @@
 document.addEventListener('DOMContentLoaded', function() {
-    const formProduto = document.getElementById('solcitacaoProduto');
-    const tabelaProdutos = document.getElementById('tabelaSolicitacoes').getElementsByTagName('tbody')[0];
+    const formSolicitacao = document.getElementById('solcitacaoProduto');
+    const tabelaSolicitacao = document.getElementById('tabelaSolicitacoes').getElementsByTagName('tbody')[0];
 
     // Carrega os produtos salvos do localStorage ao carregar a página
     function carregarSolicitacoes() {
@@ -8,9 +8,9 @@ document.addEventListener('DOMContentLoaded', function() {
         solicitacao.forEach(solicitacao => adicionarProdutoNaTabela(produto));
     }
 
-    // Adiciona produto na tabela
+    // Adiciona solicitações na tabela
     function adicionarSolcitacaoNaTabela(solicitacao) {
-        const novaLinha = tabelaProdutos.insertRow();
+        const novaLinha = tabelaSolicitacao.insertRow();
         novaLinha.insertCell(0).textContent = solicitacao.nome;
         novaLinha.insertCell(1).textContent = solicitacao.produto;
         novaLinha.insertCell(2).textContent = solicitacao.quantidade;
@@ -18,7 +18,7 @@ document.addEventListener('DOMContentLoaded', function() {
         novaLinha.insertCell(3).textContent = solicitacao.status;
     }
 
-    // Salva produto no localStorage
+    // Salva solicitações no localStorage
     function salvarSolicitacaoNoLocalStorage(produto) {
         const produtos = JSON.parse(localStorage.getItem('solicitacao')) || [];
         produtos.push(solicitacao);
@@ -26,7 +26,7 @@ document.addEventListener('DOMContentLoaded', function() {
     }
 
     // Manipula o envio do formulário
-    formProduto.addEventListener('submit', function(event) {
+    formSolicitacao.addEventListener('submit', function(event) {
         event.preventDefault();
 
         const nomeSolicitante = document.getElementById('solicitante').value;
@@ -35,7 +35,7 @@ document.addEventListener('DOMContentLoaded', function() {
         const dataSolicitacao = document.getElementById('dataSolicitacao').value;
         const statusSolicitacao = document.getElementById('statusSolicitacao').value;
 
-        const novoProduto = {
+        const novaSolicitacao = {
             nome: nomeSolicitante,
             produto:produtoSolicitado,
             quantidade: quantidadeSolicitada,

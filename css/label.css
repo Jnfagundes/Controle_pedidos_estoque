@@ -1,8 +1,8 @@
 label{
     color: wheat;
     margin-left: 10px;
-    margin-top: 40px;
-    margin-bottom: 25px;
+    margin-top: 50px;
+    margin-bottom: 35px;
 }
 
 button{
@@ -16,7 +16,7 @@ h2{
     color: green;
 }
 
-#titulo, h3{
+.titulo, h3{
     text-align: center;
     color: wheat;
 }
@@ -39,4 +39,9 @@ th{
 
 #btnSolicitacao{
     margin: 30px;
+}
+
+#tabelaSolicitacoes{
+    margin: 40px;
+    margin-left: 200px;
 }
