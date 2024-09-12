@@ -23,6 +23,7 @@ h2{
 
 th{
     color: wheat;
+    font-size: 1.5em;
 }
 
 #btnSalvarProduto{
@@ -30,7 +31,7 @@ th{
 }
 
 #tabelaProdutos{
-    margin-left: 200px;
+    margin-left: 300px;
 }
 
 #ocultarTabela{
@@ -42,6 +43,7 @@ th{
 }
 
 #tabelaSolicitacoes{
+
     margin: 40px;
-    margin-left: 200px;
+    margin-left: 300px;
 }
