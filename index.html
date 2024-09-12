@@ -66,9 +66,48 @@
         </div>
         
     </section>
+    <section id="solicitacao" style="display: none;">
+        <form action="solcitacaoProduto">
+            <h3>Solicitações</h3>
+            <label for="solicitante">Nome do solicitante: </label>
+            <input type="text" id="solicitacao">
+
+            <label for="produtoSolicitado">Item solicitado: </label>
+            <input type="text" id="produtoSolicitado">
+
+            <label for="quantidadeSolicitada">Quantidade: </label>
+            <input type="number" id="quantidadeSolicitada">
+
+            <label for="dataSolicitacao">Data da solicitação</label>
+            <input type="date" id="dataSolicitacao">
+
+            <label for="statusSolicitacao">Status da solicitação: </label>
+            <input type="text" id="statusSolicitacao">
+        </form>
+        <!--Tabela para exibir as solicitações-->
+        <div id="produtoSolicitado">
+            
+            <table border="1" id="tabelaSolicitacoes">
+                <thead>
+                    <tr>
+                        <th>Solicitante</th>
+                        <th>Produto</th>
+                        <th>Quantidade</th>
+                        <th>Data da solicitação</th>
+                        <th>Status da solicitação</th>
+                        <tbody>
+                            <!--As solicitações serão colocadas aqui-->
+                        </tbody>
+                    </tr>
+                </thead>
+
+            </table>
+        </div>
+    </section>
 
     
     <script src="script/login.js"></script>
     <script src="script/produtos.js"></script>
+    <script src="script/solicitacoes.js"></script>
 </body>
 </html>
