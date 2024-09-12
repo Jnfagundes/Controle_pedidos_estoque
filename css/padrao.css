@@ -1,0 +1,17 @@
+body{
+    background-color: rgb(34, 36, 34);
+}
+
+header{
+    display: flex;
+    color: wheat;
+    align-items: center;
+}
+
+h1{
+    margin-left: 60px;
+}
+
+hr{
+    width: 90%;
+}

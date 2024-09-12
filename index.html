@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Página de login</title>
+    <link rel="stylesheet" href="css/padrao.css">
+    <link rel="stylesheet" href="css/label.css">
+</head>
+<body>
+    <header>
+        <img src="img/logo dos SDP minusculo.png" alt="">
+        <h1>Controle de pedidos dos itens em estoque Unidade Dom João</h1>
+    </header>
+    <hr>
+    <section id="secaoLogin">
+        <label for="loginUsuario">Digite seu usuário: </label>
+        <input type="text" id="loginUsuario">
+
+        <label for="loginSenha">Digite sua senha: </label>
+        <input type="text" id="loginSenha">
+
+        <button id="btnEntrar">Entrar</button>
+    </section>
+    <section id="secaoBoasVindas" style="display:none;">
+        <h2 id="bemVindoUsuario"></h2>
+
+    </section>
+    <section id="cadastrarProduto" style="display: none;">
+        <h2 id="titulo">Cadastrar produto</h2>
+        <form id="formProduto">
+            <label for="nomeProduto">Nome do Produto:</label>
+            <input type="text" id="nomeProduto" required>
+
+            <label for="quantidadeProduto">Quantidade:</label>
+            <input type="number" id="quantidadeProduto" required>
+
+            <label for="validadeProduto">Data de Validade:</label>
+            <input type="date" id="validadeProduto" required>
+
+            <label for="entradaData">Data da chegada:</label>
+            <input type="date" id="entradaData" required>
+
+            <button type="submit">Salvar Produto</button>
+        </form>
+
+
+    </section>
+
+
+    <script src="script/login.js"></script>
+</body>
+</html>
