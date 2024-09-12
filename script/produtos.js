@@ -37,7 +37,7 @@ document.addEventListener('DOMContentLoaded', function() {
             nome: nomeProduto,
             quantidade: quantidadeProduto,
             validade: validadeProduto,
-            entradaData: entradaData
+            data: entradaData
         };
 
         // Adiciona o produto na tabela
