@@ -6,6 +6,8 @@
     <title>Página de login</title>
     <link rel="stylesheet" href="css/padrao.css">
     <link rel="stylesheet" href="css/label.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.18.5/xlsx.full.min.js"></script>
+
 </head>
 <body>
     <!--Criação do cabeçalho-->
@@ -83,52 +85,53 @@
     <!--Botão para mostrar os campos para cadastramento de solicitações-->
     <button id="btnSolicitacao" style="display: none;">Criar uma nova solicitação</button>
 
-    <!--Seção de solicitações-->
-    <section id="solicitacao" style="display: none;">
-        <form action="formSolicitacao"> <!--Formulário para criar as solicitações-->
-            <h2 class="titulo">Solicitações</h2>
-            <label for="solicitante">Nome do solicitante: </label>
-            <input type="text" id="solicitante">
+    <!-- Seção de solicitações -->
+<section id="solicitacao" style="display: none;">
+    <form id="formSolicitacao"> <!-- Formulário para criar as solicitações -->
+        <h2 class="titulo">Solicitações</h2>
+        <label for="solicitante">Nome do solicitante: </label>
+        <input type="text" id="solicitante">
 
-            <label for="produtoSolicitado">Item solicitado: </label>
-            <input type="text" id="produtoSolicitado">
+        <label for="produtoSolicitado">Item solicitado: </label>
+        <input type="text" id="produtoSolicitado">
 
-            <label for="quantidadeSolicitada">Quantidade: </label>
-            <input type="number" id="quantidadeSolicitada">
+        <label for="quantidadeSolicitada">Quantidade: </label>
+        <input type="number" id="quantidadeSolicitada">
 
-            <label for="dataSolicitacao">Data da solicitação</label>
-            <input type="date" id="dataSolicitacao">
+        <label for="dataSolicitacao">Data da solicitação</label>
+        <input type="date" id="dataSolicitacao">
 
-            <label for="statusSolicitacao" style="margin-left: 18px;">Status da solicitação: </label>
-            <input type="text" id="statusSolicitacao">
+        <label for="statusSolicitacao" style="margin-left: 18px;">Status da solicitação: </label>
+        <input type="text" id="statusSolicitacao">
 
-            <!--botão para enviar as solicitações-->
-            <button type="submit" id="btnSolicitacaoEnviar">Salvar solicitação</button>
-        </form>
-        <!--Tabela para exibir as solicitações-->
-        <div id="produtoSolicitado">
-            
-            <table border="1" id="tabelaSolicitacoes">
-                <thead>
-                    <tr>
-                        <th>Solicitante</th>
-                        <th>Produto</th>
-                        <th>Quantidade</th>
-                        <th>Data da solicitação</th>
-                        <th>Status da solicitação</th>
-                        <tbody>
-                            <!--As solicitações serão colocadas aqui-->
-                        </tbody>
-                    </tr>
-                </thead>
-
-            </table>
-        </div>
-    </section>
-
+        <!-- botão para enviar as solicitações -->
+        <button type="submit" id="btnSolicitacaoEnviar">Salvar solicitação</button>
+    </form>
     
-    <script src="script/login.js"></script>
-    <script src="script/produtos.js"></script>
-    <script src="script/solicitacoes.js"></script>
+    <button id="mostrarSolictacao">Mostrar tabela de solicitações</button>
+    <!-- Tabela para exibir as solicitações -->
+    <div id="tabelaSolicitacoesContainer" style="display: none;">
+        <table border="1" id="tabelaSolicitacoes">
+            <thead>
+                <tr>
+                    <th>Solicitante</th>
+                    <th>Produto</th>
+                    <th>Quantidade</th>
+                    <th>Data da solicitação</th>
+                    <th>Status da solicitação</th>
+                </tr>
+            </thead>
+            <tbody>
+                <!-- As solicitações serão colocadas aqui -->
+            </tbody>
+        </table>
+    </div>
+
+    <button id="ocultarSolicitacao">Ocultar tabela solicitações</button>
+</section>
+
+<script src="script/login.js"></script>
+<script src="script/produtos.js"></script>
+<script src="script/solicitacoes.js"></script>
 </body>
 </html>

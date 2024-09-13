@@ -31,3 +31,12 @@ document.getElementById('ocultarTabela').addEventListener('click' , function(){
 document.getElementById('btnSolicitacao').addEventListener('click' , function(){
     document.getElementById('solicitacao').style.display = 'block';
 });
+
+document.getElementById('mostrarSolictacao').addEventListener('click' , function(){
+    document.getElementById('tabelaSolicitacoesContainer').style.display = 'block';
+});
+
+document.getElementById('ocultarSolicitacao').addEventListener('click' , function(){
+    document.getElementById('tabelaSolicitacoesContainer').style.display = 'none';
+});
+
