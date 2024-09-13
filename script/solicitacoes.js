@@ -1,28 +1,29 @@
-document.addEventListener('DOMContentLoaded', function() {
-    const formSolicitacao = document.getElementById('solcitacaoProduto');
-    const tabelaSolicitacao = document.getElementById('tabelaSolicitacoes').getElementsByTagName('tbody')[0];
 
-    // Carrega os produtos salvos do localStorage ao carregar a página
-    function carregarSolicitacoes() {
-        const solicitacao = JSON.parse(localStorage.getItem('solicitacao')) || [];
-        solicitacao.forEach(solicitacao => adicionarProdutoNaTabela(solicitacao));
+document.addEventListener('DOMContentLoaded', function(){
+    const formSolicitacao = document.getElementById('formSolicitacao');
+    const tabelaSolicitacoes = document.getElementById('tabelaSolicitacoes').getElementsByTagName('tbody')[0];
+
+    // Guardar as solicitações no localStorage
+    function carregarSolicitacao() {
+        const solicitacoes = JSON.parse(localStorage.getItem('solicitacao')) || [];
+        solicitacoes.forEach(solicitacao => adicionarSolicitacaoNaTabela(solicitacao));
     }
 
     // Adiciona solicitações na tabela
-    function adicionarSolcitacaoNaTabela(solicitacao) {
-        const novaLinha = tabelaSolicitacao.insertRow();
-        novaLinha.insertCell(0).textContent = solicitacao.nome;
-        novaLinha.insertCell(1).textContent = solicitacao.produto;
-        novaLinha.insertCell(2).textContent = solicitacao.quantidade;
-        novaLinha.insertCell(3).textContent = solicitacao.data;
-        novaLinha.insertCell(3).textContent = solicitacao.status;
+    function adicionarSolicitacaoNaTabela(solicitacao) {
+        const novaLinha = tabelaSolicitacoes.insertRow();
+        novaLinha.insertCell(0).textContent = solicitacao.solicitante;
+        novaLinha.insertCell(1).textContent = solicitacao.produtoSolicitado;
+        novaLinha.insertCell(2).textContent = solicitacao.quantidadeSolicitada;
+        novaLinha.insertCell(3).textContent = solicitacao.dataSolicitacao;
+        novaLinha.insertCell(4).textContent = solicitacao.statusSolicitacao;
     }
 
     // Salva solicitações no localStorage
-    function salvarSolicitacaoNoLocalStorage(produto) {
-        const produtos = JSON.parse(localStorage.getItem('solicitacao')) || [];
-        produtos.push(solicitacao);
-        localStorage.setItem('solicitacao', JSON.stringify(solicitacao));
+    function salvarSolicitacaoNoLocalStorage(solicitacao) {
+        const solicitacoes = JSON.parse(localStorage.getItem('solicitacao')) || [];
+        solicitacoes.push(solicitacao);
+        localStorage.setItem('solicitacao', JSON.stringify(solicitacoes));
     }
 
     // Manipula o envio do formulário
@@ -36,23 +37,23 @@ document.addEventListener('DOMContentLoaded', function() {
         const statusSolicitacao = document.getElementById('statusSolicitacao').value;
 
         const novaSolicitacao = {
-            nome: nomeSolicitante,
-            produto:produtoSolicitado,
-            quantidade: quantidadeSolicitada,
-            data: dataSolicitacao,
-            status: statusSolicitacao
+            solicitante: nomeSolicitante,
+            produtoSolicitado: produtoSolicitado,
+            quantidadeSolicitada: quantidadeSolicitada,
+            dataSolicitacao: dataSolicitacao,
+            statusSolicitacao: statusSolicitacao
         };
 
-        // Adiciona o produto na tabela
-        adicionarProdutoNaTabela(novaSolicitacao);
+        // Adiciona a solicitação na tabela
+        adicionarSolicitacaoNaTabela(novaSolicitacao);
 
         // Salva no localStorage
-        salvarProdutoNoLocalStorage(novaSolicitacao);
+        salvarSolicitacaoNoLocalStorage(novaSolicitacao);
 
-        // Limpa o formulário
-        formProduto.reset();
+        // Carrega as solicitações salvas ao iniciar a página
+        carregarSolicitacao();
     });
 
-    // Chama a função para carregar os produtos salvos ao iniciar a página
-    carregarProdutos();
+    // Chama a função para carregar as solicitações salvas ao iniciar a página
+    carregarSolicitacao();
 });
